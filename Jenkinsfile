@@ -5,6 +5,11 @@ pipeline{
     agent any
     //agent { label 'Demo' }
 
+    environment {
+        CI = true
+        ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
+        JFROG = credentials('jfrog')
+    }
     parameters{
 
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
