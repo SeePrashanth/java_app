@@ -81,7 +81,7 @@ pipeline{
 
         stage('Upload Binaries to Jfrog Artifactory') {
             steps {
-                sh 'jf rt upload --url http://35.153.57.78:8082/ui/ --access-token ${ARTIFACTORY-ACCESS-TOKEN} /var/lib/jenkins/workspace/jfrog/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar java-web-app/'
+                sh 'jf rt upload --url http://35.153.57.78:8082/ui/ --access-token ${ARTIFACTORY-ACCESS-TOKEN} kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar java-web-app/'
             }
         }
         
